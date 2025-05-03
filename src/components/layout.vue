@@ -63,7 +63,7 @@ const techOptions = ref([]);
 // 从本地 JSON 文件加载数据
 onMounted(async () => {
     try {
-        const response = await axios.get('/options.json'); // 访问 public 文件夹中的 JSON 文件
+        const response = await axios.get('src\\json\\components.json'); // 访问 public 文件夹中的 JSON 文件
         techOptions.value = response.data.options;
     } catch (error) {
         console.error('获取数据失败:', error);
