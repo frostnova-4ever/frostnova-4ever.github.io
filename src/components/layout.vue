@@ -60,10 +60,11 @@ import views from './content/views.vue';
 // 定义存储后端数据的响应式变量
 const techOptions = ref([]);
 
+// 从本地 JSON 文件加载数据
 onMounted(async () => {
     try {
-        const response = await axios.get('http://127.0.0.1:5000/options_api');
-        techOptions.value = response.data.map(item => item.option);
+        const response = await axios.get('/options.json'); // 访问 public 文件夹中的 JSON 文件
+        techOptions.value = response.data.options;
     } catch (error) {
         console.error('获取数据失败:', error);
     }
