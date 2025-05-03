@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@tinymce/tinymce-vue": "^6.1.0",
+    "axios": "^1.9.0",
+    "element": "^0.1.4",
+    "element-plus": "^2.9.7",
+    "plus": "^0.1.0",
+    "screenfull": "^6.0.2",
+    "vue": "^3.5.13",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0"
+  }
+}

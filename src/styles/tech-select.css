@@ -1,0 +1,13 @@
+.tech-select {
+    display: flex;
+    /* 设置为弹性盒子布局 */
+    width: 400px;
+    /* 指定宽度 */
+    height: 40px;
+    /* 指定高度 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: space-around;
+    /* 水平均匀分布 */
+    font-size: 12px;
+}
