@@ -1,0 +1,3 @@
+import{_ as i,e as l,r as m,c as o,n as c,o as n}from"./index-BRROROLj.js";const f={class:"preview-outer"},d=["src"],_={key:1},u={__name:"Preview",setup(p){const r=l().params.file,s=m(null);function a(){const e=s.value;e&&e.contentWindow&&e.contentDocument&&setTimeout(()=>{e.style.height=e.contentDocument.body.scrollHeight+"px";const t=e.contentDocument.createElement("style");t.innerHTML=`
+        html, body { overflow: hidden !important; }
+      `,e.contentDocument.head.appendChild(t)},100)}return(e,t)=>(n(),o("div",f,[c(r)?(n(),o("iframe",{key:0,ref_key:"iframeRef",ref:s,src:`/md/${c(r)}`,frameborder:"0",class:"html-iframe",title:"HTML 预览",onLoad:a},null,40,d)):(n(),o("div",_,"未找到文件"))]))}},y=i(u,[["__scopeId","data-v-5c88bead"]]);export{y as default};
