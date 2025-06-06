@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh_CN" data-theme-mode="light" data-light-theme="Asri" data-dark-theme="midnight">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" id="baseStyle" href="stage/build/export/base.css?v=3.1.28"/>
+    <link rel="stylesheet" type="text/css" id="themeDefaultStyle" href="appearance/themes/Asri/theme.css?v=3.1.28"/>
+    <script src="stage/protyle/js/protyle-html.js?v=3.1.28"></script>
+    <link rel="stylesheet" type="text/css" id="themeStyle" href="appearance/themes/Asri/theme.css?3.1.28"/>
+    <title>如何在学习通中自动刷课</title>
+    <!-- Exported by SiYuan v3.1.28 -->
+    <style>
+        body {font-family: var(--b3-font-family);background-color: var(--b3-theme-background);color: var(--b3-theme-on-background)}
+        @font-face {
+  font-family: "Emojis Additional";
+  src: url(../../../appearance/fonts/Noto-COLRv1-2.047/Noto-COLRv1.woff2) format("woff2");
+  unicode-range: U+1fae9, U+1fac6, U+1fabe, U+1fadc, U+e50a, U+1fa89, U+1fadf, U+1f1e6-1f1ff, U+1f3f4, U+e0067, U+e0062,
+  U+e0065, U+e006e, U+e007f, U+e0073, U+e0063, U+e0074, U+e0077, U+e006c;
+  size-adjust: 85%;
+}
+@font-face {
+  font-family: "Emojis Reset";
+  src: local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  unicode-range: U+263a, U+21a9, U+2642, U+303d, U+2197, U+2198, U+2199, U+2196, U+2195, U+2194, U+2660, U+2665, U+2666, 
+  U+2663, U+3030, U+21aa, U+25b6, U+25c0, U+2640, U+203c, U+a9, U+ae, U+2122;
+  size-adjust: 85%;
+}
+@font-face {
+  font-family: "Emojis";
+  src: local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  size-adjust: 85%;
+}
+:root{--b3-font-size-editor:16px}
+.b3-typography code:not(.hljs), .protyle-wysiwyg span[data-type~=code] { font-variant-ligatures: none }
+.li > .protyle-action {height:34px;line-height: 34px}
+/* 列表项后的内容和列表项对齐 https://github.com/siyuan-note/siyuan/issues/2803 */
+.protyle-wysiwyg [data-node-id].li > .protyle-action ~ div {line-height:26px}
+.protyle-wysiwyg [data-node-id].li > .protyle-action ~ div > [spellcheck] {min-height:26px}
+.protyle-wysiwyg [data-node-id].li::before {height: calc(100% - 38px);top:38px}
+
+.protyle-wysiwyg [data-node-id] {}
+.protyle-wysiwyg .li {min-height:34px}
+.protyle-gutters button svg {height:26px}
+        #helloPanel{border:1px rgb(189,119,119) dashed}.plugin-note-to-website__custom-tab{background-color:var(--b3-theme-background);height:100%;width:100%;display:flex;justify-content:center;align-items:center}.plugin-note-to-website__custom-dock{display:flex;justify-content:center;align-items:center}.plugin-note-to-website__time{background:var(--b3-card-info-background);border-radius:4px;padding:2px 8px}
+
+        
+    </style>
+</head>
+<body>
+<div class="b3-typography" 
+style="max-width: 800px;margin: 0 auto;" 
+id="preview"><h1 id="如何在学习通中自动刷课" tags="脚本,js" title="如何在学习通中自动刷课" updated="20250604154211">如何在学习通中自动刷课</h1>
+<p id="20250604153910-8kwmuw9" updated="20250604154018">　　最近正值考试周，突然发现老师让我们在学习通刷整本书的课程，十分炸裂。</p>
+<p id="20250604154022-nmjah5e" updated="20250604154111">　　且学习通被老师设置为不可离开屏幕，需要很高通过率。</p>
+<p id="20250604154020-5smh0hb" updated="20250604154020">　　遂研究学习通脚本刷课</p>
+<h4 id="20250604150937-rp2pfgr" updated="20250604154117"><span data-type="strong">1.先获取扩展</span></h4>
+<p id="20250604151304-g743qsg" updated="20250604151803">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span style="width: calc(45% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604151304-20t4ue8.png" data-src="assets/image-20250604151304-20t4ue8.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p id="20250604151819-p5nd6j5" updated="20250604151823">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604151819-3fjapow.png" data-src="assets/image-20250604151819-3fjapow.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<h4 id="20250604151901-qqo9gbz" updated="20250604151909">搜脚本猫并安装</h4>
+<p id="20250604151859-qd4mdkr" updated="20250604151859">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604151859-533dk9v.png" data-src="assets/image-20250604151859-533dk9v.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<h4 id="20250604152041-aztkccj" updated="20250604152042">打开</h4>
+<p updated="20250604153808" id="20250604152039-xj9wd5p">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604152039-nvtmxb2.png" data-src="assets/image-20250604152039-nvtmxb2.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<h4 id="20250604152956-uflywow" updated="20250604153038">方法一：你可以直接在脚本列表中寻找</h4>
+<p id="20250604152953-yi9rh94" updated="20250604153845">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604152953-9iei141.png" data-src="assets/image-20250604152953-9iei141.png" alt="image" style="height: 44vh" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p id="20250604153331-bghi94k" updated="20250604153837">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604153331-fsnsldr.png" data-src="assets/image-20250604153331-fsnsldr.png" alt="image" style="height: 44vh" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<h4 id="20250604153026-tzj8vn2" updated="20250604154211">方法二：也可以自己新建</h4>
+<p id="20250604153226-u9pa64s" updated="20250604153240">　　我亲测有用的：<a href="https://blog.csdn.net/m0_70474954/article/details/147527422">学习通刷课脚本（全网最全教程）_学习通脚本-CSDN博客</a></p>
+<p id="20250604152202-r38opqx" updated="20250604153803">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604152202-a9uifyt.png" data-src="assets/image-20250604152202-a9uifyt.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p updated="20250604153823" id="20250604153721-h2guwca">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span style="width: calc(83% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604153721-qcql7v1.png" data-src="assets/image-20250604153721-qcql7v1.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p id="20250604153728-kde3k5d" updated="20250604153831">​<span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span style="width: calc(84% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/image-20250604153728-716q3ec.png" data-src="assets/image-20250604153728-716q3ec.png" alt="image" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p id="20250604153731-4zuxq62" updated="20250604154211">　　这个粘贴有时候用不了，你也可以直接导入js文件（）</p>
+<p id="20250604154208-mes03d1" updated="20250604154208">　　‍</p>
+</div>
+<script src="appearance/icons/material/icon.js?v=3.1.28"></script>
+<script src="stage/build/export/protyle-method.js?v=3.1.28"></script>
+<script src="stage/protyle/js/lute/lute.min.js?v=3.1.28"></script>  
+<script>
+    window.siyuan = {
+      config: {
+        appearance: { mode: 0, codeBlockThemeDark: "base16/dracula", codeBlockThemeLight: "github" },
+        editor: { 
+          codeLineWrap: true,
+          fontSize: 16,
+          codeLigatures: false,
+          plantUMLServePath: "https://www.plantuml.com/plantuml/svg/~1",
+          codeSyntaxHighlightLineNum: false,
+          katexMacros: JSON.stringify({}),
+        }
+      },
+      languages: {copy:"复制"}
+    };
+    const previewElement = document.getElementById('preview');
+    Protyle.highlightRender(previewElement, "stage/protyle");
+    Protyle.mathRender(previewElement, "stage/protyle", false);
+    Protyle.mermaidRender(previewElement, "stage/protyle");
+    Protyle.flowchartRender(previewElement, "stage/protyle");
+    Protyle.graphvizRender(previewElement, "stage/protyle");
+    Protyle.chartRender(previewElement, "stage/protyle");
+    Protyle.mindmapRender(previewElement, "stage/protyle");
+    Protyle.abcRender(previewElement, "stage/protyle");
+    Protyle.htmlRender(previewElement);
+    Protyle.plantumlRender(previewElement, "stage/protyle");
+    document.querySelectorAll(".protyle-action__copy").forEach((item) => {
+      item.addEventListener("click", (event) => {
+            let text = item.parentElement.nextElementSibling.textContent.trimEnd();
+            text = text.replace(/ /g, " "); // Replace non-breaking spaces with normal spaces when copying
+            navigator.clipboard.writeText(text);
+            event.preventDefault();
+            event.stopPropagation();
+      })
+    });
+</script></body></html>

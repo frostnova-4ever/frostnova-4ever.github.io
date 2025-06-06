@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh_CN" data-theme-mode="light" data-light-theme="Asri" data-dark-theme="midnight">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" id="baseStyle" href="stage/build/export/base.css?v=3.1.28"/>
+    <link rel="stylesheet" type="text/css" id="themeDefaultStyle" href="appearance/themes/Asri/theme.css?v=3.1.28"/>
+    <script src="stage/protyle/js/protyle-html.js?v=3.1.28"></script>
+    <link rel="stylesheet" type="text/css" id="themeStyle" href="appearance/themes/Asri/theme.css?3.1.28"/>
+    <title>解决在github pages中页面无法刷新的问题</title>
+    <!-- Exported by SiYuan v3.1.28 -->
+    <style>
+        body {font-family: var(--b3-font-family);background-color: var(--b3-theme-background);color: var(--b3-theme-on-background)}
+        @font-face {
+  font-family: "Emojis Additional";
+  src: url(../../../appearance/fonts/Noto-COLRv1-2.047/Noto-COLRv1.woff2) format("woff2");
+  unicode-range: U+1fae9, U+1fac6, U+1fabe, U+1fadc, U+e50a, U+1fa89, U+1fadf, U+1f1e6-1f1ff, U+1f3f4, U+e0067, U+e0062,
+  U+e0065, U+e006e, U+e007f, U+e0073, U+e0063, U+e0074, U+e0077, U+e006c;
+  size-adjust: 85%;
+}
+@font-face {
+  font-family: "Emojis Reset";
+  src: local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  unicode-range: U+263a, U+21a9, U+2642, U+303d, U+2197, U+2198, U+2199, U+2196, U+2195, U+2194, U+2660, U+2665, U+2666, 
+  U+2663, U+3030, U+21aa, U+25b6, U+25c0, U+2640, U+203c, U+a9, U+ae, U+2122;
+  size-adjust: 85%;
+}
+@font-face {
+  font-family: "Emojis";
+  src: local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  size-adjust: 85%;
+}
+:root{--b3-font-size-editor:16px}
+.b3-typography code:not(.hljs), .protyle-wysiwyg span[data-type~=code] { font-variant-ligatures: none }
+.li > .protyle-action {height:34px;line-height: 34px}
+/* 列表项后的内容和列表项对齐 https://github.com/siyuan-note/siyuan/issues/2803 */
+.protyle-wysiwyg [data-node-id].li > .protyle-action ~ div {line-height:26px}
+.protyle-wysiwyg [data-node-id].li > .protyle-action ~ div > [spellcheck] {min-height:26px}
+.protyle-wysiwyg [data-node-id].li::before {height: calc(100% - 38px);top:38px}
+
+.protyle-wysiwyg [data-node-id] {}
+.protyle-wysiwyg .li {min-height:34px}
+.protyle-gutters button svg {height:26px}
+        #helloPanel{border:1px rgb(189,119,119) dashed}.plugin-note-to-website__custom-tab{background-color:var(--b3-theme-background);height:100%;width:100%;display:flex;justify-content:center;align-items:center}.plugin-note-to-website__custom-dock{display:flex;justify-content:center;align-items:center}.plugin-note-to-website__time{background:var(--b3-card-info-background);border-radius:4px;padding:2px 8px}
+
+        
+    </style>
+</head>
+<body>
+<div class="b3-typography" 
+style="max-width: 800px;margin: 0 auto;" 
+id="preview"><h1 id="解决在github-pages中页面无法刷新的问题" id="20250601185010-lvjs692" tags="bug,github" title="解决在github pages中页面无法刷新的问题">解决在github pages中页面无法刷新的问题</h1>
+<h4 id="20250601185010-x1h90y5" updated="20250601204253"><span data-type="strong">当静态网页部署在 github 的 pages 页面时，排除网络问题后，点击浏览器刷新按钮却不能正常显示？</span></h4>
+<p id="20250601195951-s0svy7v" updated="20250601201047">　　我在部署油 vue 转静态 js 页面时也遇到相同问题，经研究，我认为是如下问题：</p>
+<p id="20250601200115-h18cqb0" updated="20250601204253">　　路由问题：GitHub Pages 上出现刷新后 404 错误，通常是因为使用了单页应用（SPA）路由，而 GitHub Pages 默认仅支持基于文件的路由。当刷新页面时，浏览器直接请求特定路径（如 <span data-type="em">yourdomain.com/page</span>），但 GitHub Pages 会尝试查找名为 page 的实际文件，而不是将请求路由到 index.html。</p>
+<h4 id="20250601200244-xfhwx3g" updated="20250601204413"><span data-type="strong">如何解决？</span></h4>
+<p id="20250601200251-w0q379x" updated="20250601201045">　　<span data-type="strong">方法 1.添加 404.html 页面</span></p>
+<p updated="20250601201141" id="20250601201031-hq6hu1a">　　创建一个 <span data-type="code">404.html</span>​ 文件，内容与 <span data-type="code">index.html</span>​ 相同，或使用 JavaScript 将所有 404 错误重定向到 <span data-type="code">index.html</span>​（这个方法比较逆天，是在 404 错误上修改定向）</p>
+<p id="20250601201141-mlc06ey" updated="20250601201208">　　<span data-type="strong">方法 2.修改路由</span></p>
+<p id="20250601201153-wttqp0l" updated="20250601201209">　　	<span data-type="strong">针对特定框架修改：</span></p>
+<p id="20250601201230-qodx00n" updated="20250601204343">　　	vue：在 vue 中，如果上传 github pages，需要调整为 <span data-type="text strong" style="color: var(--b3-font-color9);">Hash</span> 路由，(将 <span data-type="code">createWebHistory()</span>​<span data-type="text" style="color: var(--b3-font-color9);"> </span>改为 <span data-type="code">createWebHashHistory()</span>​)，这样所有路由都变成<span data-type="em">/#/page/2</span> 形式，GitHub Pages 能正确处理。</p>
+<pre class="code-block" data-language="vue"><code class="hljs">import { createRouter, createWebHashHistory } from 'vue-router';
+// ...existing code...
+export default createRouter({
+    history: createWebHashHistory(),
+    routes
+});
+</code></pre>
+<p id="20250601200217-5r6gglx" updated="20250601204413">　　这样就应该能解决该问题了</p>
+<p id="20250601195934-4vgl2qs" updated="20250601195934">　　‍</p>
+</div>
+<script src="appearance/icons/material/icon.js?v=3.1.28"></script>
+<script src="stage/build/export/protyle-method.js?v=3.1.28"></script>
+<script src="stage/protyle/js/lute/lute.min.js?v=3.1.28"></script>  
+<script>
+    window.siyuan = {
+      config: {
+        appearance: { mode: 0, codeBlockThemeDark: "base16/dracula", codeBlockThemeLight: "github" },
+        editor: { 
+          codeLineWrap: true,
+          fontSize: 16,
+          codeLigatures: false,
+          plantUMLServePath: "https://www.plantuml.com/plantuml/svg/~1",
+          codeSyntaxHighlightLineNum: false,
+          katexMacros: JSON.stringify({}),
+        }
+      },
+      languages: {copy:"复制"}
+    };
+    const previewElement = document.getElementById('preview');
+    Protyle.highlightRender(previewElement, "stage/protyle");
+    Protyle.mathRender(previewElement, "stage/protyle", false);
+    Protyle.mermaidRender(previewElement, "stage/protyle");
+    Protyle.flowchartRender(previewElement, "stage/protyle");
+    Protyle.graphvizRender(previewElement, "stage/protyle");
+    Protyle.chartRender(previewElement, "stage/protyle");
+    Protyle.mindmapRender(previewElement, "stage/protyle");
+    Protyle.abcRender(previewElement, "stage/protyle");
+    Protyle.htmlRender(previewElement);
+    Protyle.plantumlRender(previewElement, "stage/protyle");
+    document.querySelectorAll(".protyle-action__copy").forEach((item) => {
+      item.addEventListener("click", (event) => {
+            let text = item.parentElement.nextElementSibling.textContent.trimEnd();
+            text = text.replace(/ /g, " "); // Replace non-breaking spaces with normal spaces when copying
+            navigator.clipboard.writeText(text);
+            event.preventDefault();
+            event.stopPropagation();
+      })
+    });
+</script></body></html>
